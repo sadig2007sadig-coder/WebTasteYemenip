@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>كتابي الذكي</title><meta name="theme-color" content="#0b1f3a">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- المصادقة (إجبارية) -->
+<div id="auth" class="auth">
+  <div class="auth-card">
+    <div class="logo">📘 كتابي <span>الذكي</span></div>
+    <p class="sub">منصتك الذكية لكتب الصف الثالث الثانوي</p>
+    <div class="tabs"><button id="tLogin" class="on">تسجيل الدخول</button><button id="tReg">حساب جديد</button></div>
+    <form id="fLogin" class="form">
+      <input id="lId" placeholder="البريد الإلكتروني أو رقم الهاتف" required autocomplete="username">
+      <input id="lPw" type="password" placeholder="كلمة السر" required autocomplete="current-password">
+      <button class="btn">دخول</button>
+    </form>
+    <form id="fReg" class="form hide">
+      <div class="row"><input id="rF" placeholder="الاسم الأول" required><input id="rL" placeholder="الاسم الأخير" required></div>
+      <input id="rId" placeholder="البريد الإلكتروني أو رقم الهاتف" required>
+      <input id="rPw" type="password" placeholder="كلمة السر (8 أحرف فأكثر)" minlength="8" required>
+      <button class="btn">إنشاء الحساب وإرسال رمز التحقق</button>
+    </form>
+    <form id="fVer" class="form hide">
+      <p id="verMsg" class="note"></p>
+      <input id="vCode" inputmode="numeric" maxlength="6" placeholder="● ● ● ● ● ●" class="code" required>
+      <button class="btn">تأكيد الرمز</button>
+      <button type="button" id="resend" class="link">إعادة إرسال الرمز</button>
+    </form>
+    <div id="msg" class="msg"></div>
+  </div>
+</div>
+
+<!-- التطبيق -->
+<div id="app" class="hide">
+  <header class="top"><div class="logo sm">📘 كتابي <span>الذكي</span></div>
+    <nav id="nav"></nav><div class="user"><span id="uName"></span><button id="out" class="btn ghost">خروج</button></div></header>
+  <main id="main"></main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"></script>
+<script src="config.js"></script><script src="data.js"></script><script src="app.js"></script>
+</body></html>
